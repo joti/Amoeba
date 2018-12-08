@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import org.apache.log4j.Logger;
 
 /**
  * @author Joti *
@@ -586,6 +587,7 @@ public class Tabla {
     int[] cella = {-1, -1};
     String lepes;
     Scanner sc = new Scanner(System.in);
+    Logger logger = Logger.getLogger(Amoeba.class.getName());
 
     System.out.println("Kezdődhet a játék!");
     System.out.println("Megszakítás '.' érték megadásával lehetséges.");
@@ -666,6 +668,7 @@ public class Tabla {
         break;
       default:
         System.out.println("A győztes: " + jatekosok[aktualisJatekos].getNev());
+        logger.debug("Nyer: " + jatekosok[aktualisJatekos].getNev() );
     }
 
   }
